@@ -43,9 +43,9 @@
 
 // 1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
 // 'Сколько фильмов вы уже посмотрели?'
-let numberOfFilms = prompt('Сколько фильмов Вы посмотрели? ', '');
+const numberOfFilms = +prompt('Сколько фильмов Вы посмотрели? ', '');
 
-let personalMovieDB = {
+const personalMovieDB = {
   count: numberOfFilms,
   movies: {},
   actors: {},
@@ -53,11 +53,12 @@ let personalMovieDB = {
   privat: false
 };
 
-let tempA;
-let tempB;
-for (i = 1; i > 0; i-- ) {
+let tempA,
+    tempB;
+for (let i = 0; i < 2; i++ ) {
     tempA = prompt('Один из последних просмотренных фильмов?', '');
     tempB = prompt('Оцените фильм ', '');
-    personalMovieDB['movies'] = {tempA: tempB};
+    personalMovieDB.movies[tempA] = tempB;
 }
-document.write(personalMovieDB).movies;
+
+console.log(personalMovieDB);
