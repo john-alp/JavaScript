@@ -1,0 +1,52 @@
+function copy(mainObj) {
+    let objCopy = {};
+
+    for (let key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copy(numbers); // clone
+
+const add = {
+    d: 17,
+    e: 20
+};
+
+console.log(Object.assign(numbers, add)); // poverhnasnaya copiy
+
+const clone = Object.assign({}, add); // clone
+
+
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();  // clone array
+
+//es 6 for arr
+//es 8 for obj
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook' ];
+
+      console.log(internet);
+
+
+
+function log(a, b, c) {
+    console.log(a + ' ' + b + ' ' + c);
+}      
+      
+      const num = [2, 5, 7];
+
+    log(...num);  
